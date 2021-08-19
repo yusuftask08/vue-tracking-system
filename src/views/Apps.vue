@@ -110,7 +110,7 @@
       </v-list>
       <div></div>
     </v-navigation-drawer>
-    <v-main>
+    <div>
       <v-container class="px-4 py-0 fill-height" fluid>
         <v-row class="fill-height">
           <v-col>
@@ -118,7 +118,7 @@
           </v-col>
         </v-row>
       </v-container>
-    </v-main>
+    </div>
   </v-app>
 </template>
 <script>
