@@ -5,12 +5,11 @@
     </v-toolbar>
     <div class="d-flex align-center">
       <div class="d-flex itemCard ml-4">
-        <div
+        <v-card
           class="cards mb-2 mr-2 col-lg-3"
           v-for="item in cardItems"
           :key="item.id"
-          :color="cardColor"
-          elevation="10"
+          elevation="0"
           outlined
         >
           <v-list-item three-line>
@@ -36,7 +35,10 @@
               </div>
             </v-list-item-content>
           </v-list-item>
-        </div>
+          <div class="area-chart">
+            <Area />
+          </div>
+        </v-card>
       </div>
     </div>
     <div class="column py-5 px-5">
@@ -47,9 +49,11 @@
 
 <script>
 import Column from "@/components/Chart/Column.vue";
+import Area from "@/components/Chart/Area.vue";
 export default {
   components: {
     Column,
+    Area,
   },
   data() {
     return {
@@ -59,7 +63,6 @@ export default {
           content: "1.250",
           color: "primary",
           icon: "mdi-currency-usd",
-          cardColor: "red",
         },
         {
           title: "TODAY EARNINGS",
@@ -80,12 +83,19 @@ export default {
           icon: "mdi-currency-usd",
         },
       ],
+      value: [200, 675, 410, 390, 310, 460, 250, 240, 500, 300],
     };
   },
 };
 </script>
 
 <style>
+.area-chart {
+  margin-top: -25px;
+  width: 107%;
+  margin-left: -12px;
+  padding: 0px !important;
+}
 .column {
   width: 50%;
 }
@@ -100,14 +110,17 @@ export default {
 
 .cards {
   border-radius: 5px;
+  border: none !important;
   background: linear-gradient(
     90deg,
     rgba(0, 99, 160, 0.753) 0%,
     rgba(0, 174, 201, 1) 90%
   );
+  padding: 0 0 0 0 !important;
 }
 .itemCard {
   width: 96%;
+  height: 150px;
 }
 .p-content {
   font-size: 20px;
