@@ -35,6 +35,7 @@ export default {
           type: "bar",
           height: 350,
         },
+
         plotOptions: {
           bar: {
             horizontal: false,
@@ -76,6 +77,36 @@ export default {
             formatter: function (val) {
               return "$ " + val + " thousands";
             },
+          },
+        },
+        grid: {
+          show: true,
+          borderColor: "#90A4AE",
+          strokeDashArray: 0,
+          position: "back",
+          xaxis: {
+            lines: {
+              show: false,
+            },
+          },
+          yaxis: {
+            lines: {
+              show: false,
+            },
+          },
+          row: {
+            colors: undefined,
+            opacity: 0.5,
+          },
+          column: {
+            colors: undefined,
+            opacity: 0.5,
+          },
+          padding: {
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0,
           },
         },
       },

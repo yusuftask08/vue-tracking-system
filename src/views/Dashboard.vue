@@ -35,25 +35,47 @@
               </div>
             </v-list-item-content>
           </v-list-item>
-          <div class="area-chart">
-            <Area />
+          <div class="spark">
+            <Sparkline />
           </div>
         </v-card>
       </div>
     </div>
-    <div class="column py-5 px-5">
-      <Column />
-    </div>
+
+    <v-row no-gutters class="mx-4 mt-10">
+      <v-col cols="6" md="3">
+        <div class="pa-2 mr-2" outlined tile>
+          <Pie />
+        </div>
+      </v-col>
+      <v-col cols="6" md="6">
+        <div class="pa-2 mr-2 column" outlined tile>
+          <Column />
+        </div>
+      </v-col>
+      <v-col cols="6" md="3">
+        <div class="pa-2" outlined tile>
+          <PieGuage />
+        </div>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
 <script>
+import Sparkline from "@/components/Chart/Sparkline.vue";
 import Column from "@/components/Chart/Column.vue";
 import Area from "@/components/Chart/Area.vue";
+import Pie from "@/components/Chart/Pie.vue";
+import PieGuage from "@/components/Chart/PieGuage.vue";
+
 export default {
   components: {
     Column,
     Area,
+    Pie,
+    PieGuage,
+    Sparkline,
   },
   data() {
     return {
@@ -90,14 +112,14 @@ export default {
 </script>
 
 <style>
+.spark {
+  margin-top: 5px;
+}
 .area-chart {
-  margin-top: -25px;
   width: 107%;
-  margin-left: -12px;
-  padding: 0px !important;
 }
 .column {
-  width: 50%;
+  width: 100%;
 }
 .page {
   background-color: #ecf0fa;
