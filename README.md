@@ -1,5 +1,4 @@
-# parklab-management-web-ap
-
+# Vue - Tracking - System
 ## Project setup
 ```
 npm install
